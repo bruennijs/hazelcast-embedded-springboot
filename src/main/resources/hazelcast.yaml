@@ -1,6 +1,11 @@
-hazelcast-client:
-  cluster-name: development
+hazelcast:
+  cluster-name: ${hazelcast.cluster.name}
   network:
-    cluster-members:
-      - 127.0.0.1:5701
+    join:
+      multicast:
+        enabled: true
+#      kubernetes:
+#        enabled: true
+
+
 

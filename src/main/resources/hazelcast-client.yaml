@@ -1,0 +1,6 @@
+hazelcast-client:
+  cluster-name: ${hazelcast.cluster.name}
+  network:
+    cluster-members:
+      - ${hazelcast.client.address}
+

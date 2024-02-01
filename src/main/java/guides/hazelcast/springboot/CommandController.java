@@ -3,6 +3,7 @@ package guides.hazelcast.springboot;
 import com.hazelcast.core.HazelcastInstance;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ public class CommandController {
     private HazelcastInstance hazelcastInstance;
 
     private ConcurrentMap<String,String> retrieveMap() {
-        return hazelcastInstance.getMap("map");
+        return hazelcastInstance.getMap("map-hazelcast");
     }
 
     @PostMapping("/put")
