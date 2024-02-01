@@ -1,2 +1,6 @@
-hazelcast:
-  cluster-name: hazelcast-cluster
+hazelcast-client:
+  cluster-name: development
+  network:
+    cluster-members:
+      - 127.0.0.1:5701
+

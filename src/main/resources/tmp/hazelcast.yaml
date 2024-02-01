@@ -1,0 +1,9 @@
+hazelcast:
+  cluster-name: dev-embedded
+  network:
+    join:
+      multicast:
+        enabled: false
+      kubernetes:
+        enabled: true
+        service-dns: ${k8s.service.dns-discovery.name}
