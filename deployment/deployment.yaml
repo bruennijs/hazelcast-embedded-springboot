@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-hazelcast-embedded-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: spring-hazelcast-embedded
+  template:
+    metadata:
+      labels:
+        app: spring-hazelcast-embedded
+    spec:
+      serviceAccountName: einfachelsterplus-backend
+      containers:
+        - name: spring-hazelcast-embedded-container
+          image: docker-repos.dockerregistry.mgm-tp.com/de.elster.einfachelsterplus/hazelcast-embedded-springboot-discovery-dns:latest
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: k8s
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 5701
+              name: hazelcast

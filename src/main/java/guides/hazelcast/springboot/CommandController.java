@@ -16,12 +16,11 @@ public class CommandController {
     @Autowired
     private HazelcastInstance hazelcastInstance;
 
-    private ConcurrentMap<String,String> retrieveMap() {
-        return hazelcastInstance.getMap("map-hazelcast");
-    }
+    private final String cacheName = "map-hazelcast";
 
     @PostMapping("/put")
     public CommandResponse put(@RequestParam(value = "key") String key, @RequestParam(value = "value") String value) {
+        //hazelcastInstance.getCacheManager().getCache(cacheName).put(key, value);
         retrieveMap().put(key, value);
         return new CommandResponse(value);
     }
@@ -30,5 +29,9 @@ public class CommandController {
     public CommandResponse get(@RequestParam(value = "key") String key) {
         String value = retrieveMap().get(key);
         return new CommandResponse(value);
+    }
+
+    private ConcurrentMap<String,String> retrieveMap() {
+        return hazelcastInstance.getMap(cacheName);
     }
 }

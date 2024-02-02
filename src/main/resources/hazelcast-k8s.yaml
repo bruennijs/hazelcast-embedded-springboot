@@ -1,0 +1,12 @@
+hazelcast:
+  cluster-name: dev
+  network:
+    join:
+      multicast:
+        enabled: false
+      kubernetes:
+        enabled: true
+        service-dns: spring-hazelcast-embedded-headless.p-svszc-einfachelsterplus-dev.svc.cluster.local
+
+
+
