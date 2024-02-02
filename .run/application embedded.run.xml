@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="application embedded" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="embedded" />
+    <module name="hazelcast-embedded-springboot" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="guides.hazelcast.springboot.HazelcastApplication" />
+    <option name="VM_PARAMETERS" value="-Dhazelcast.client.address=&quot;localhost:5701&quot;  -Dhazelcast.cluster.name=development   -Dhazelcast.jcache.provider.type=member" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="hazelcast-embedded-springboot [package]" run_configuration_type="MavenRunConfiguration" />
+    </method>
+  </configuration>
+</component>
