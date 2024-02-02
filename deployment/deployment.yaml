@@ -15,7 +15,7 @@ spec:
       serviceAccountName: einfachelsterplus-backend
       containers:
         - name: spring-hazelcast-embedded-container
-          image: docker-repos.dockerregistry.mgm-tp.com/de.elster.einfachelsterplus/hazelcast-embedded-springboot-discovery-dns:latest
+          image: hazelcast-embedded-springboot-discovery-dns:latest
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
